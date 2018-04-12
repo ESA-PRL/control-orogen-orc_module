@@ -28,17 +28,25 @@ bool Task::configureHook()
 {
     if (! TaskBase::configureHook())
         return false;
+
+    std::cout << "ORC_MODULE Configure Hook" << std::endl;
+
     return true;
 }
 bool Task::startHook()
 {
     if (! TaskBase::startHook())
         return false;
+
+    std::cout << "ORC_MODULE Start Hook" << std::endl;
+
     return true;
 }
 void Task::updateHook()
 {
     TaskBase::updateHook();
+
+    std::cout << "ORC_MODULE Update Hook" << std::endl;
 }
 void Task::errorHook()
 {

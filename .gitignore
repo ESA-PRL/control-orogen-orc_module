@@ -6,3 +6,6 @@ build/*
 
 *autobuild-stamp
 
+logs/
+*.log
+*.txt
