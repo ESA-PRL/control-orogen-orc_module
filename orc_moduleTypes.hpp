@@ -8,8 +8,8 @@
  * which case you do not need this file
  */
 
-namespace orc_module {
+namespace orc_module
+{
 }
 
 #endif
-

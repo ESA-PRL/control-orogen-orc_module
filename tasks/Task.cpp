@@ -4,21 +4,9 @@
 
 using namespace orc_module;
 
-Task::Task(std::string const& name)
-    : TaskBase(name)
-{
-}
-
-Task::Task(std::string const& name, RTT::ExecutionEngine* engine)
-    : TaskBase(name, engine)
-{
-}
-
-Task::~Task()
-{
-}
-
-
+Task::Task(std::string const& name) : TaskBase(name) {}
+Task::Task(std::string const& name, RTT::ExecutionEngine* engine) : TaskBase(name, engine) {}
+Task::~Task() {}
 
 /// The following lines are template definitions for the various state machine
 // hooks defined by Orocos::RTT. See Task.hpp for more detailed
@@ -26,8 +14,7 @@ Task::~Task()
 
 bool Task::configureHook()
 {
-    if (! TaskBase::configureHook())
-        return false;
+    if (!TaskBase::configureHook()) return false;
 
     std::cout << "ORC_MODULE Configure Hook" << std::endl;
 
@@ -35,8 +22,7 @@ bool Task::configureHook()
 }
 bool Task::startHook()
 {
-    if (! TaskBase::startHook())
-        return false;
+    if (!TaskBase::startHook()) return false;
 
     std::cout << "ORC_MODULE Start Hook" << std::endl;
 
@@ -48,15 +34,6 @@ void Task::updateHook()
 
     std::cout << "ORC_MODULE Update Hook" << std::endl;
 }
-void Task::errorHook()
-{
-    TaskBase::errorHook();
-}
-void Task::stopHook()
-{
-    TaskBase::stopHook();
-}
-void Task::cleanupHook()
-{
-    TaskBase::cleanupHook();
-}
+void Task::errorHook() { TaskBase::errorHook(); }
+void Task::stopHook() { TaskBase::stopHook(); }
+void Task::cleanupHook() { TaskBase::cleanupHook(); }
